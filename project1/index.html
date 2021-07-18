@@ -7,10 +7,14 @@
 	<a-scene embedded arjs='sourceType: webcam;'>
 		<a-assets>
 		 <a-asset-image id="image-asset" scr="https://raw.githubusercontent.com/particlexev/particlexev.github.io/master/project1/Virtual Tour Librarian Poster.png" width="3" height="1.5">
-		</a-asset-image>
+		</a-assets>
 		
 		<a-marker-camera preset='hiro'>
-		<a-entity rotation="0 0 0"></a-entity>
+		<a-entity 
+		image="#image-assest"
+		rotation="0 0 0">
+		scale="2 2 2"
+		</a-entity>
 		
 		</a-marker-camera>
 	</a-scene>
