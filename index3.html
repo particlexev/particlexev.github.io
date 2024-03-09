@@ -10,24 +10,25 @@
 </head>
 
 <body>
+
+
 <a-scene>
+  <a-assets>
+    <video id="penguin-sledding" autoplay loop="true" src="https://particlexev.github.io/1.mp4"></video>
+  </a-assets>
 
-<a-assets>
+  <!-- Using the asset management system. -->
+  <a-video src="#penguin-sledding" width="16" height="9" position="0 0 -20"></a-video>
 
-<video id="vid" src="https://particlexev.github.io/1.mp4" loop="true"></video>
-
-</a=assets>
-
-<a-camera>
-<a-cursor></a-cursor>
-</a-camera>
-
-<a-video src"#vid" width="8" height="4.5" position="0 3 -9">
-
-
-
-</a-video>
+  <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
+  <a-video src="https://particlexev.github.io/1.mp4"></a-video>
 </a-scene>
+
+
+  
+
+
+
 </body>
 </html>
 
