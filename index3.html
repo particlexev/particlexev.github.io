@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Video8</title>
+    <title>Video9</title>
     <meta name="description" content="Video - A-Frame">
     <script src="../../../dist/aframe-master.js"></script>
     <script src="../../js/play-on-click.js"></script>
@@ -13,12 +13,9 @@
       <a-assets>
         <video id="videoBunny" preload="auto"
                src="https://particlexev.github.io/1.mp4"
-               width="160" height="90" autoplay loop="true"
+               width="500" height="200" autoplay loop="true"
                crossOrigin="anonymous" muted></video>
-        <video id="videoFireworks" preload="auto"
-               src="https://particlexev.github.io/1.mp4"
-               width="160" height="90" autoplay loop="true"
-               crossOrigin="anonymous" muted></video>
+       
       </a-assets>
 
     
@@ -32,7 +29,7 @@
 
   
       <a-entity material="shader: flat; src: #videoFireworks"
-                geometry="primitive: plane; width: 160; height: 90"
+                geometry="primitive: plane; width: 500; height: 200"
                 position="0 -60 -200"
                 rotation="0 -35 0"
                 play-on-click
