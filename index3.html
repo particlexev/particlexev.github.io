@@ -1,1 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<title>video test</title>
+<script src="https://aframe.io/release/0.7.1/afram.min.js"></script>
+
+<script>
+AFRAME.registerComponent ('play-pause, {
+init: function () {
+var myVideo = document. querySelector('#vid');
+var videoControls = document.querySelector('#videoControls');
+this.el.addEventListener('click', function () {
+     if (myVideo.paused) {
+         myVideo.play();
+         videoControls.setAttribute('src', '#pause');
+         } else {
+            myVideo.pause();
+            videoControls.setAttribute('src', '#play');
+     }
+});
+}
+});
+
+</script>
+
+
+</head>
+
+<body>
+<a-scene>
+
+<a-assets>
+<img id="play" src="https://particlexev.github.io/playbutton.png">
+<img id="pause" src="https://particlexev.github.io/pausebutton.png">
+<video id="vid" src="https://particlexev.github.io/1.mp4" loop="true"></video>
+
+</a=assets>
+
+<a-camera>
+<a-cursor></a-cursor>
+</a-camera>
+
+<a-video src"#vid" width="8" height="4.5" position="0 3 -9">
+
+<a-image id="videoControls" src="#play" position="0 -3 0" scale="0.5 0.5 1">
+    play-pause>
+</a-image>
+
+</a-video>
+</a-scene>
+</body>
+</html>
+
 
