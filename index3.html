@@ -1,150 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Model Viewer</title>
-    
-    <style>
-  model-viewer {
-  width: 100%;
-  height: 400px;
-  background-color: #70BCD1;
-}
-#card {
-  margin: 3em auto;
-  display: flex;
-  flex-direction: column;
-  max-width: 600px;
-  border-radius: 6px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
-  
-  .attribution {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 1em;
-}
-  
-}</style>
-    
-    
-    
-    
-    
- <link rel="stylesheet" href="style.css">
-    
-    <!-- 🚨 REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
-    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
-
-    <!-- 💁 OPTIONAL: Intersection Observer polyfill for better performance in Safari and IE11 -->
-    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
-
-    <!-- 💁 OPTIONAL: Resize Observer polyfill improves resize behavior in non-Chrome browsers -->
-    <script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script>
-
-    <!-- 💁 OPTIONAL: Fullscreen polyfill is needed to fully support AR features -->
-    <script src="https://unpkg.com/fullscreen-polyfill@1.0.2/dist/fullscreen.polyfill.js"></script>
-
-    <!-- 💁 OPTIONAL: Include prismatic.js for Magic Leap support -->
-    <script src="https://unpkg.com/@magicleap/prismatic/prismatic.min.js"></script>
-    
-    <!-- 💁 OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
-    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
-
-      <script>
-AFRAME.registerComponent('vidhandler', {
-  // ...
-  init: function () {
-    // Set up initial state and variables.
-    this.toggle = false;
-    this.vid = document.querySelector("#vid")
-    this.vid.pause();
-  },
-  tick:function(){
-    
-if(this.el.object3D.visible == true){
-  if(!this.toggle){
-     this.toggle = true;
-     this.vid.play();
-    }
-  }else{
-  this.toggle = false;
-    this.vid.pause();
-    }
-  }
-});
+<html>
+  <script src="https://aframe.io/release/1.0.3/aframe.min.js">
   </script>
-
-    
-    <!-- import the webpage's stylesheet -->
-   
-  </head>
+</head>
   <body>
-    <div id="card">
-    <model-viewer 
-                  <model-viewer 
-      src="https://particlexev.github.io/AR2.ogv" 
-     
-      ios-src="https://particlexev.github.io/AR2.ogv"
-                   
-                  camera-controls camera-orbit="10deg 50deg .70m"
-                  alt="A 3D model of an object"
-                  shadow-intensity="1"
-                 
+<a-scene>
+  <a-assets>
+<video id="sample-video" autoplay loop="true" 
+  src="https://youtu.be/j1V2ZhcKr08?si=bFZivOTBWta-HgzQ"></video>
     
-                  ar
-                  ar-modes="webxr scene-viewer quick-look"
-                  ar-placement="wall"> 
-    </model-viewer>
-    </div>
+  </a-assets>
+  <a-video src="sample-video" width="16" height="9" position-="0 0 -15">
 
 
     
-  <div id="attribution">
-      <span>
-        <h2>Welcome to the FIU Library</h2>
-        <span>For all your library questions please visit our website <p> <a href="https://library.fiu.edu/" target="_blank">FIU Library</a></span>
-      </span> 
-  </div>
-  </p>
-  
-  <footer>
-    <p>
-      
-    </p>
-    
-  <p>
-    
-    </p><span>Select the cube located in the bottom right to unlock a secret library prize in Augmented Reality (AR) mode</span>
-  </footer>
-    
-    
-    <script type="module"
-      src="https://unpkg.com/@google/model-viewer@v0.9.0/dist/model-viewer.js">
-  </script>
-
-  <!-- Loads <model-viewer> for old browsers like IE11: -->
-  <script nomodule
-      src="https://unpkg.com/@google/model-viewer@v0.9.0/dist/model-viewer-legacy.js">
-  </script>
-<body style='margin : 0px; overflow: hidden;'>
-  <div style='position: fixed; top: 10px; width:inherit; text-align: center; z-index: 1;'>
-    <a href="https://particlexev.github.io/index3.html" target="_blank">AR.js</a> - Demo version
-  </div>
-  <a-scene embedded artoolkit='sourceType: webcam; detectionMode: mono; maxDetectionRate: 30; canvasWidth: 240; canvasHeight: 180' >
-    <a-assets>
-      <video id="vid" src="https://particlexev.github.io/AR2.ogv" loop="true" crossorigin>
-    </a-assets>
-   
-    <a-marker id="memarker" preset="qr-code1" vidhandler>
-      <a-plane position='1 2 -2' scale="2 2 2" width="2" rotation="-90 0 0" material='transparent:true;opacity: 0.7;src:#vid'></a-plane>
-    </a-marker>
-
-  </a-scene>
+  </a-video>
+</a-scene>
     
   </body>
 </html>
+
+
