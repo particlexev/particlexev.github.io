@@ -2,18 +2,18 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Video11</title>
+    <title>Video12</title>
     <meta name="description" content="Video - A-Frame">
     <script src="../../../dist/aframe-master.js"></script>
     
-    <script src="../../js/hide-on-play.js"></script>
+
   </head>
   <body>
     <a-scene>
       <a-assets>
         <video id="videoBunny" preload="auto"
                src="https://particlexev.github.io/1.mp4"
-               width="1600" height="800" autoplay loop="true"
+               width="800" height="400" autoplay loop="true"
                crossOrigin="anonymous"></video>
        
       </a-assets>
@@ -23,7 +23,6 @@
                 geometry="primitive: plane; width: 800; height: 400;"
                 position="0 60 -250"
                 rotation="0 35 0"
-                play-on-click
                 visible="true">
       </a-entity>
 
@@ -34,8 +33,7 @@
           text="align: center;
                 width: 6;
                 wrapCount: 100;
-                color: blue;
-                value: Click or tap to start video"
+                color: blue;"
           hide-on-play="#videoFireworks">
         </a-entity>
       </a-camera>
