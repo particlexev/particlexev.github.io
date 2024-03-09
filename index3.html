@@ -1,73 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Model Viewer</title>
-    
-    <style>
-  model-viewer {
-  width: 100%;
-  height: 400px;
-  background-color: #70BCD1;
-}
-#card {
-  margin: 3em auto;
-  display: flex;
-  flex-direction: column;
-  max-width: 600px;
-  border-radius: 6px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
-  
-  .attribution {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 1em;
-}
-  
-}</style>
-    
-    
-    
-    
-    
- <link rel="stylesheet" href="style.css">
-    
-    <!-- 🚨 REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
-    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
-
-    <!-- 💁 OPTIONAL: Intersection Observer polyfill for better performance in Safari and IE11 -->
-    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
-
-    <!-- 💁 OPTIONAL: Resize Observer polyfill improves resize behavior in non-Chrome browsers -->
-    <script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script>
-
-    <!-- 💁 OPTIONAL: Fullscreen polyfill is needed to fully support AR features -->
-    <script src="https://unpkg.com/fullscreen-polyfill@1.0.2/dist/fullscreen.polyfill.js"></script>
-
-    <!-- 💁 OPTIONAL: Include prismatic.js for Magic Leap support -->
-    <script src="https://unpkg.com/@magicleap/prismatic/prismatic.min.js"></script>
-    
-    <!-- 💁 OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
-    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
-    
-    <!-- import the webpage's stylesheet -->
-   
-
+    <meta charset="utf-8">
+    <title>360 Video</title>
+    <meta name="description" content="360 Video — A-Frame">
+    <script src="../../../dist/aframe-master.js"></script>
+    <script src="../../js/play-on-click.js"></script>
+    <script src="../../js/hide-on-play.js"></script>
   </head>
   <body>
     <a-scene>
       <a-assets>
-      
+        <!--
+        SOURCE
+        Author: Bitmovin
+        URL:    https://bitmovin.com/demos/vr-360
+        -->
         <video id="video"
                loop
                crossorigin="anonymous"
                playsinline webkit-playsinline
-               src="https://particlexev.github.io/1.mp4">
+               src="https://bitmovin-a.akamaihd.net/content/playhouse-vr/progressive.mp4">
         </video>
       </a-assets>
       <a-videosphere
@@ -81,7 +34,7 @@
           text="align:center;
                 width:6;
                 wrapCount:100;
-                color: blue;
+                color: white;
                 value: Click or tap to start video"
           hide-on-play="#video">
         </a-entity>
