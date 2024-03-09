@@ -1,18 +1,54 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Video 7</title>
-  <meta name="description" content="Video Sphere — A-Frame">
-  <script src="js/aframe-core.js"></script>
- 
+  <head>
+    <meta charset="utf-8">
+    <title>Video8</title>
+    <meta name="description" content="Video - A-Frame">
+    <script src="../../../dist/aframe-master.js"></script>
+    <script src="../../js/play-on-click.js"></script>
+    <script src="../../js/hide-on-play.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <video id="videoBunny" preload="auto"
+               src="https://particlexev.github.io/1.mp4"
+               width="160" height="90" autoplay loop="true"
+               crossOrigin="anonymous" muted></video>
+        <video id="videoFireworks" preload="auto"
+               src="https://particlexev.github.io/1.mp4"
+               width="160" height="90" autoplay loop="true"
+               crossOrigin="anonymous" muted></video>
+      </a-assets>
 
-</head>
-<body>
-  <button onclick="location.reload(true)" style="position:absolute;right:0;top:0;background:white;z-index:9999;</button>
-  <a-assets>
-    <video id="video" src="https://particlexev.github.io/1.mp4" loop webkit-playsinline></video>
-  </a-assets>
- 
-</body>
+    
+      <a-entity material="shader: flat; src: #videoBunny"
+                geometry="primitive: plane; width: 160; height: 90;"
+                position="0 60 -250"
+                rotation="0 35 0"
+                play-on-click
+                visible="false">
+      </a-entity>
+
+  
+      <a-entity material="shader: flat; src: #videoFireworks"
+                geometry="primitive: plane; width: 160; height: 90"
+                position="0 -60 -200"
+                rotation="0 -35 0"
+                play-on-click
+                visible="false">
+      </a-entity>
+      <a-camera>
+        <a-entity
+          position="0 0 -1.5"
+          text="align: center;
+                width: 6;
+                wrapCount: 100;
+                color: black;
+                value: Click or tap to start video"
+          hide-on-play="#videoFireworks">
+        </a-entity>
+      </a-camera>
+    </a-scene>
+  </body>
 </html>
