@@ -1,43 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
-
-
-    <title>Model Viewer5</title>
-    
-    <style>
-        #splash {
+    <title>VideoX</title>
+    <meta name="description" content="Hello, WebVR! - A-Frame">
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <style type="text/css">
+      #splash {
         display: none;
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        }
 
-#card {
-  margin: 3em auto;
-  display: flex;
-  flex-direction: column;
-  max-width: 600px;
-  border-radius: 6px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
-  
-  .attribution {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 1em;
-}
-  
-}</style>
-    
-      <script>
+        align-items: center;
+        justify-content: center;
+        
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        cursor: pointer;
+        z-index: 999;
+      }
+    </style>
+    <script>
       document.addEventListener("DOMContentLoaded", function(event) {
         var scene = document.querySelector("a-scene");
         var vid = document.getElementById("video");
@@ -69,49 +54,11 @@
         }
       })
     </script>
-
-    
-    
-    
- <link rel="stylesheet" href="style.css">
-    
-    <!-- 🚨 REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
-    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
-
-    <!-- 💁 OPTIONAL: Intersection Observer polyfill for better performance in Safari and IE11 -->
-    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
-
-    <!-- 💁 OPTIONAL: Resize Observer polyfill improves resize behavior in non-Chrome browsers -->
-    <script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script>
-
-    <!-- 💁 OPTIONAL: Fullscreen polyfill is needed to fully support AR features -->
-    <script src="https://unpkg.com/fullscreen-polyfill@1.0.2/dist/fullscreen.polyfill.js"></script>
-
-    <!-- 💁 OPTIONAL: Include prismatic.js for Magic Leap support -->
-    <script src="https://unpkg.com/@magicleap/prismatic/prismatic.min.js"></script>
-    
-    <!-- 💁 OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
-    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
-    
-    <!-- import the webpage's stylesheet -->
-   
   </head>
   <body>
-    
-    <div id="card">
-    <scene-viewer 
-                  <scene-viewer 
-      src="https://particlexev.github.io/FIU%20Book%203.glb" 
-     
-      ios-src="https://particlexev.github.io/library_message4___1673242072859.usdz"
-   camera-controls camera-orbit="10deg 50deg .70m"
-                  alt="A 3D model of an object"
-                  shadow-intensity="1"
-                 
-    
-                  ar
-                  ar-modes="webxr scene-viewer quick-look"
-                  ar-placement="wall"
+    <div id="splash">
+      <div id="start-button">Start</div>
+    </div>
     <a-scene>
       <a-assets>
           <video id="video" loop="true" src="https://particlexev.github.io/1.mp4" webkit-playsinline></video>
@@ -121,43 +68,5 @@
 
       <a-video id="vidEl" loop="true" src="#video" rotation="0 180 0" width="15" height="7" position="0 0 -10"></a-video>
     </a-scene>
-                  
-                       <div id="splash">
-      <div id="start-button">Start</div>
-    </div>
-      
-      > 
-    </scene-viewer>
-    </div>
-    
-
-  <div id="attribution">
-      <span>
-        <h2>Welcome to the FIU Library</h2>
-        <span>For all your library questions please visit our website <p> <a href="https://library.fiu.edu/" target="_blank">FIU Library</a></span>
-      </span> 
-  </div>
-  </p>
-  
-  <footer>
-    <p>
-      
-    </p>
-    
-  <p>
-    
-    </p><span>Select the cube located in the bottom right to unlock a secret library prize in Augmented Reality (AR) mode</span>
-  </footer>
-    
-    
-    <script type="module"
-      src="https://unpkg.com/@google/model-viewer@v0.9.0/dist/model-viewer.js">
-  </script>
-
-  <!-- Loads <model-viewer> for old browsers like IE11: -->
-  <script nomodule
-      src="https://unpkg.com/@google/model-viewer@v0.9.0/dist/model-viewer-legacy.js">
-  </script>
-    
   </body>
 </html>
