@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Test10</title>
+    <title>Test11</title>
     <meta name="description" content="Hello, WebVR! - A-Frame">
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
 
@@ -11,7 +11,7 @@
     
       <style>
   model-viewer {
-  width: 400%;
+  width: 100%;
   height: 400px;
   background-color: #70BCD1;
 }
@@ -88,20 +88,27 @@
     <model-viewer 
                   <model-viewer 
       src="https://particlexev.github.io/FIU%20Book%203.glb" 
-      camera-controls camera-orbit="10deg 50deg .70m"
+     
+     
+                   
+                  camera-controls camera-orbit="10deg 50deg .70m"
                   alt="A 3D model of an object"
                   shadow-intensity="1"
-      
+                 
+    
                   ar
                   ar-modes="webxr scene-viewer quick-look"
                   ar-placement="wall"> 
-   <div id="splash">
-      <div id="start-button">Press here Start</div>
-  </div>
-                   
+    </model-viewer>
+    </div>
+
+     
                  
 
-  
+   <div id="splash">
+      <div id="start-button">Start</div>
+    </div>
+
   <a-scene>
       <a-assets>
           <video id="video" loop="true" src="https://particlexev.github.io/1.mp4" webkit-playsinline></video>
