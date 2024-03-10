@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hello, WebVR! - A-Frame</title>
+    <title>Test4</title>
     <meta name="description" content="Hello, WebVR! - A-Frame">
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
 
- <title>Video 2</title>
+
 
 
     
@@ -23,13 +23,6 @@
   border-radius: 6px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
   overflow: hidden;
-  
-  .attribution {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 1em;
-}
   
 }</style>
 
@@ -65,6 +58,29 @@
         }
       })
     </script>
+
+     <link rel="stylesheet" href="style.css">
+    
+    <!-- 🚨 REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
+
+    <!-- 💁 OPTIONAL: Intersection Observer polyfill for better performance in Safari and IE11 -->
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+
+    <!-- 💁 OPTIONAL: Resize Observer polyfill improves resize behavior in non-Chrome browsers -->
+    <script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script>
+
+    <!-- 💁 OPTIONAL: Fullscreen polyfill is needed to fully support AR features -->
+    <script src="https://unpkg.com/fullscreen-polyfill@1.0.2/dist/fullscreen.polyfill.js"></script>
+
+    <!-- 💁 OPTIONAL: Include prismatic.js for Magic Leap support -->
+    <script src="https://unpkg.com/@magicleap/prismatic/prismatic.min.js"></script>
+    
+    <!-- 💁 OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+    
+    <!-- import the webpage's stylesheet -->
+
   </head>
   <body>
 
@@ -104,5 +120,17 @@
 
       <a-video id="vidEl" loop="true" src="#video" rotation="0 180 0" width="15" height="7" position="0 0 -10"></a-video>
     </a-scene>
+
+ 
+    <script type="module"
+      src="https://unpkg.com/@google/model-viewer@v0.9.0/dist/model-viewer.js">
+  </script>
+
+  <!-- Loads <model-viewer> for old browsers like IE11: -->
+  <script nomodule
+      src="https://unpkg.com/@google/model-viewer@v0.9.0/dist/model-viewer-legacy.js">
+  </script>
+
+    
   </body>
 </html>
