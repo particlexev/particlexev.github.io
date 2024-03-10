@@ -7,7 +7,7 @@
       <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
 
 
-    <title>Model Viewer</title>
+    <title>Model Viewer2</title>
     
     <style>
         #splash {
@@ -118,6 +118,19 @@
                   ar-placement="wall"> 
     </model-viewer>
     </div>
+     <div id="splash">
+      <div id="start-button">Start</div>
+    </div>
+    <a-scene>
+      <a-assets>
+          <video id="video" loop="true" src="https://particlexev.github.io/1.mp4" webkit-playsinline></video>
+      </a-assets>
+      
+      <a-entity camera="userHeight: 1.6" look-controls cursor="rayOrigin: mouse"></a-entity>
+
+      <a-video id="vidEl" loop="true" src="#video" rotation="0 180 0" width="15" height="7" position="0 0 -10"></a-video>
+    </a-scene>
+
   <div id="attribution">
       <span>
         <h2>Welcome to the FIU Library</h2>
