@@ -1,15 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Test11</title>
-    <meta name="description" content="Hello, WebVR! - A-Frame">
-    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
 
 
-
-
+    <title>Model Viewer</title>
     
-      <style>
+    <style>
+        #splash {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        }
   model-viewer {
   width: 100%;
   height: 400px;
@@ -24,9 +32,16 @@
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
   overflow: hidden;
   
+  .attribution {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1em;
+}
+  
 }</style>
-
-    <script>
+    
+      <script>
       document.addEventListener("DOMContentLoaded", function(event) {
         var scene = document.querySelector("a-scene");
         var vid = document.getElementById("video");
@@ -59,7 +74,10 @@
       })
     </script>
 
-     <link rel="stylesheet" href="style.css">
+    
+    
+    
+ <link rel="stylesheet" href="style.css">
     
     <!-- 🚨 REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
     <script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
@@ -80,16 +98,15 @@
     <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
     
     <!-- import the webpage's stylesheet -->
-
+   
   </head>
   <body>
-
-  <div id="card">
+    <div id="card">
     <model-viewer 
                   <model-viewer 
       src="https://particlexev.github.io/FIU%20Book%203.glb" 
      
-     
+      ios-src="https://particlexev.github.io/library_message4___1673242072859.usdz"
                    
                   camera-controls camera-orbit="10deg 50deg .70m"
                   alt="A 3D model of an object"
@@ -101,30 +118,25 @@
                   ar-placement="wall"> 
     </model-viewer>
     </div>
-
-     
-                 
-
-   <div id="splash">
-      <div id="start-button">Start</div>
-    </div>
-
-  <a-scene>
-      <a-assets>
-          <video id="video" loop="true" src="https://particlexev.github.io/1.mp4" webkit-playsinline></video>
-      </a-assets>
+  <div id="attribution">
+      <span>
+        <h2>Welcome to the FIU Library</h2>
+        <span>For all your library questions please visit our website <p> <a href="https://library.fiu.edu/" target="_blank">FIU Library</a></span>
+      </span> 
+  </div>
+  </p>
+  
+  <footer>
+    <p>
       
-      <a-entity camera="userHeight: 1.6" look-controls cursor="rayOrigin: mouse"></a-entity>
-
-      <a-video id="vidEl" loop="true" src="#video" rotation="0 180 0" width="15" height="7" position="0 0 -10"></a-video>
-    </a-scene>
-
-      
+    </p>
     
-          </model-viewer>
-    </div>
-
- 
+  <p>
+    
+    </p><span>Select the cube located in the bottom right to unlock a secret library prize in Augmented Reality (AR) mode</span>
+  </footer>
+    
+    
     <script type="module"
       src="https://unpkg.com/@google/model-viewer@v0.9.0/dist/model-viewer.js">
   </script>
@@ -133,7 +145,5 @@
   <script nomodule
       src="https://unpkg.com/@google/model-viewer@v0.9.0/dist/model-viewer-legacy.js">
   </script>
-
-    
   </body>
 </html>
