@@ -7,7 +7,7 @@
       <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
 
 
-    <title>Model Viewer3</title>
+    <title>Model Viewer4</title>
     
     <style>
         #splash {
@@ -101,13 +101,25 @@
    
   </head>
   <body>
+    
     <div id="card">
     <model-viewer 
                   <model-viewer 
       src="https://particlexev.github.io/FIU%20Book%203.glb" 
      
-      ios-src="https://particlexev.github.io/1.mp4"
-                   
+      ios-src="https://particlexev.github.io/library_message4___1673242072859.usdz"
+                    <div id="splash">
+      <div id="start-button">Start</div>
+    </div>
+    <a-scene>
+      <a-assets>
+          <video id="video" loop="true" src="https://particlexev.github.io/1.mp4" webkit-playsinline></video>
+      </a-assets>
+      
+      <a-entity camera="userHeight: 1.6" look-controls cursor="rayOrigin: mouse"></a-entity>
+
+      <a-video id="vidEl" loop="true" src="#video" rotation="0 180 0" width="15" height="7" position="0 0 -10"></a-video>
+    </a-scene>
                   camera-controls camera-orbit="10deg 50deg .70m"
                   alt="A 3D model of an object"
                   shadow-intensity="1"
@@ -147,17 +159,6 @@
   <script nomodule
       src="https://unpkg.com/@google/model-viewer@v0.9.0/dist/model-viewer-legacy.js">
   </script>
-     <div id="splash">
-      <div id="start-button">Start</div>
-    </div>
-    <a-scene>
-      <a-assets>
-          <video id="video" loop="true" src="https://particlexev.github.io/1.mp4" webkit-playsinline></video>
-      </a-assets>
-      
-      <a-entity camera="userHeight: 1.6" look-controls cursor="rayOrigin: mouse"></a-entity>
-
-      <a-video id="vidEl" loop="true" src="#video" rotation="0 180 0" width="15" height="7" position="0 0 -10"></a-video>
-    </a-scene>
+    
   </body>
 </html>
