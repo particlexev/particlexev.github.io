@@ -104,7 +104,14 @@
       src="https://particlexev.github.io/FIU%20Book%203.glb" 
      
       ios-src="https://particlexev.github.io/library_message4___1673242072859.usdz"
-   
+   camera-controls camera-orbit="10deg 50deg .70m"
+                  alt="A 3D model of an object"
+                  shadow-intensity="1"
+                 
+    
+                  ar
+                  ar-modes="webxr scene-viewer quick-look"
+                  ar-placement="wall"
     <a-scene>
       <a-assets>
           <video id="video" loop="true" src="https://particlexev.github.io/1.mp4" webkit-playsinline></video>
@@ -114,14 +121,7 @@
 
       <a-video id="vidEl" loop="true" src="#video" rotation="0 180 0" width="15" height="7" position="0 0 -10"></a-video>
     </a-scene>
-                  camera-controls camera-orbit="10deg 50deg .70m"
-                  alt="A 3D model of an object"
-                  shadow-intensity="1"
-                 
-    
-                  ar
-                  ar-modes="webxr scene-viewer quick-look"
-                  ar-placement="wall"
+                  
                        <div id="splash">
       <div id="start-button">Start</div>
     </div>
