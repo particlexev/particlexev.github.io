@@ -7,7 +7,7 @@
       <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
 
 
-    <title>Model Viewer4</title>
+    <title>Model Viewer5</title>
     
     <style>
         #splash {
@@ -18,11 +18,7 @@
         right: 0;
         bottom: 0;
         }
-  model-viewer {
-  width: 100%;
-  height: 400px;
-  background-color: #70BCD1;
-}
+
 #card {
   margin: 3em auto;
   display: flex;
@@ -103,14 +99,12 @@
   <body>
     
     <div id="card">
-    <model-viewer 
-                  <model-viewer 
+    <scene-viewer 
+                  <scene-viewer 
       src="https://particlexev.github.io/FIU%20Book%203.glb" 
      
       ios-src="https://particlexev.github.io/library_message4___1673242072859.usdz"
-                    <div id="splash">
-      <div id="start-button">Start</div>
-    </div>
+   
     <a-scene>
       <a-assets>
           <video id="video" loop="true" src="https://particlexev.github.io/1.mp4" webkit-playsinline></video>
@@ -127,8 +121,13 @@
     
                   ar
                   ar-modes="webxr scene-viewer quick-look"
-                  ar-placement="wall"> 
-    </model-viewer>
+                  ar-placement="wall"
+                       <div id="splash">
+      <div id="start-button">Start</div>
+    </div>
+      
+      > 
+    </scene-viewer>
     </div>
     
 
